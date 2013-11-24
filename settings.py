@@ -197,6 +197,22 @@ sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-follow"))
 sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-image-cropper"))
 sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-widget-tweaks"))
 
+DEFAULT_FILE_STORAGE = 's3utils.MediaS3Backend'  #'storages.backends.s3boto.S3BotoStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 's3utils.StaticS3Backend'
+AWS_S3_SECURE_URLS = False
+AWS_S3_URL_PROTOCOL = 'http'
+AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'www.wishradio-dev.in'
+AWS_LOCATION = 'static'
+
+S3_URL = 'http://%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATIC_DIRECTORY = '/static/'
+STATIC_URL = S3_URL + STATIC_DIRECTORY
+
+STORAGE_ROOT = 'static/media'
+
 #sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-social-path"))
 # Name of the directory for the project.
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
@@ -208,13 +224,13 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = "/static/"
+#STATIC_URL = "/static/"
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+STATIC_ROOT = STATIC_URL  #os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -223,7 +239,7 @@ MEDIA_URL = STATIC_URL + "media/"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
+MEDIA_ROOT = ''#os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -281,6 +297,7 @@ INSTALLED_APPS = (
     "django_messages",
     "follow",
     "widget_tweaks",
+    "storages",
 )
 
 # List of processors used by RequestContext to populate the context.

@@ -13,3 +13,6 @@
 /django-follow
 /static
 /django-image-cropper
+/automation
+/django-widget-tweaks
+~
