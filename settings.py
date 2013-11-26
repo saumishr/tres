@@ -424,7 +424,10 @@ FACEBOOK_APP_ID = '132071406991673'
 FACEBOOK_API_SECRET = 'fb97559adbaea9aabf2e2fa4acfdacf8'
 TWITTER_CONSUMER_KEY         = 'KvNB58DW7Ac0Y8yaLrQFKw'
 TWITTER_CONSUMER_SECRET      = 'J5HoGEVHZWREbDjwHLc5vRwKnby1KqNIa4R0ladXLY'
-SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook', 'twitter',)
+GOOGLE_OAUTH2_CLIENT_ID = '724652257519-i4ha3lvrt0faeot6cpgnvh1573qb8kee.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'd2I4nTOlBkffy2R6-T-nx35-'
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook', 'twitter', 'google',)
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
 SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'associate_complete'
 SOCIAL_AUTH_DEFAULT_USERNAME =  'new_social_auth_user' # you'll need to import slugify from 'django.template.defaultfilters'
@@ -435,8 +438,9 @@ SOCIAL_AUTH_ASSOCIATE_BY_MAIL = True
 
 TWITTER_EXTRA_DATA = [('profile_image_url', 'profile_image_url'), ('location', 'location')]
 FACEBOOK_EXTRA_DATA = [('birthday', 'birthday'), ('location', 'location'), ('gender', 'gender')]
-
+GOOGLE_OAUTH2_EXTRA_DATA = [('picture', 'picture'), ('birthday', 'birthday'), ('gender', 'gender')]
 AUTHENTICATION_BACKENDS = (
+	'social_auth.backends.google.GoogleOAuth2Backend',
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'mezzanine.core.auth_backends.MezzanineBackend',
