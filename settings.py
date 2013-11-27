@@ -420,12 +420,12 @@ else:
 
 
 # SOCIAL AUTH SETTINGS
-FACEBOOK_APP_ID = '132071406991673'
-FACEBOOK_API_SECRET = 'fb97559adbaea9aabf2e2fa4acfdacf8'
-TWITTER_CONSUMER_KEY         = 'KvNB58DW7Ac0Y8yaLrQFKw'
-TWITTER_CONSUMER_SECRET      = 'J5HoGEVHZWREbDjwHLc5vRwKnby1KqNIa4R0ladXLY'
-GOOGLE_OAUTH2_CLIENT_ID = '724652257519-i4ha3lvrt0faeot6cpgnvh1573qb8kee.apps.googleusercontent.com'
-GOOGLE_OAUTH2_CLIENT_SECRET = 'd2I4nTOlBkffy2R6-T-nx35-'
+FACEBOOK_APP_ID 		= '1401801733391485'
+FACEBOOK_API_SECRET 		= '7b361ac05bef9539b7010c9505b89b6c'
+TWITTER_CONSUMER_KEY         	= 'tDEt17kvm6TMCeOqwZ1ow'
+TWITTER_CONSUMER_SECRET      	= 'M9rSGr5h2FtE1xk4X8R5b0ysr2QfCHP5HETlNVITjM'
+GOOGLE_OAUTH2_CLIENT_ID 	= '618532174899-rf35i3t4f6l9drhthgc007scs24a7orl.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET 	= 'hSfKg98h7W4R5Zp3vSBt27O2'
 
 SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook', 'twitter', 'google',)
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
@@ -440,7 +440,7 @@ TWITTER_EXTRA_DATA = [('profile_image_url', 'profile_image_url'), ('location', '
 FACEBOOK_EXTRA_DATA = [('birthday', 'birthday'), ('location', 'location'), ('gender', 'gender')]
 GOOGLE_OAUTH2_EXTRA_DATA = [('picture', 'picture'), ('birthday', 'birthday'), ('gender', 'gender')]
 AUTHENTICATION_BACKENDS = (
-	'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'mezzanine.core.auth_backends.MezzanineBackend',
