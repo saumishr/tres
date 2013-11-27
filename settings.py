@@ -426,7 +426,9 @@ TWITTER_CONSUMER_KEY         	= 'tDEt17kvm6TMCeOqwZ1ow'
 TWITTER_CONSUMER_SECRET      	= 'M9rSGr5h2FtE1xk4X8R5b0ysr2QfCHP5HETlNVITjM'
 GOOGLE_OAUTH2_CLIENT_ID 	= '618532174899-rf35i3t4f6l9drhthgc007scs24a7orl.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET 	= 'hSfKg98h7W4R5Zp3vSBt27O2'
-
+GOOGLE_OAUTH_EXTRA_SCOPE =  [ 
+                                 'https://www.google.com/m8/feeds', 
+                            ]
 SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook', 'twitter', 'google',)
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
 SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'associate_complete'
