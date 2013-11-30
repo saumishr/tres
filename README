@@ -1,2 +1,3 @@
 Parent folder for Tres.
 Needs various packages.
+Please copy chronograph.sh to root folder of virtualenv. ex: /home/saumishr/.virtualenvs/<env_name>
