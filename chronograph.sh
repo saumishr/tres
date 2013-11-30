@@ -6,4 +6,4 @@
 #   Pass this script one argument: the path to your project.
 #   (The directory in which your manage.py is)
 PROJECT_PATH=$1
-source $PROJECT_PATH"/../../../.virtualenvs/commerceenv/bin/activate" && cd $PROJECT_PATH && python manage.py cron
+source $PROJECT_PATH"/../../../.virtualenvs/wishradioenv/bin/activate" && cd $PROJECT_PATH && python manage.py cron
