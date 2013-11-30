@@ -74,6 +74,7 @@ urlpatterns = patterns("",
     url(r'', include('social_auth.urls')),
     url(r'^relationships/', include('relationships.urls')),
     ('^activity/', include('actstream.urls')),
+    url(r'^admin/chronograph/job/(?P<pk>\d+)/run/$', 'chronograph.views.job_run', name="chronograph_job_run"),
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
@@ -128,7 +129,8 @@ urlpatterns = patterns("",
     url(r'^wish/(?P<wish_id>\d+)/$', render_wish, name='render_wish'),
     url(r'^reldata/(?P<content_type_id>\d+)/(?P<object_id>\d+)/$', get_reldata, name='get_reldata'),
     url(r'^get_reviews_by_user/(?P<user_id>\d+)/$', get_reviews_by_user, name='get_reviews_by_user'),  
-    url(r'^blog/image/edit/(?P<blogpost_id>[\d]+)/$', edit_blog_image, name='edit_blog_image'),      
+    url(r'^blog/image/edit/(?P<blogpost_id>[\d]+)/$', edit_blog_image, name='edit_blog_image'),  
+    url(r'^admin/django-ses/', include('django_ses.urls')),    
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
