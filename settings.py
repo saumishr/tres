@@ -296,6 +296,7 @@ INSTALLED_APPS = (
     "django_messages",
     "follow",
     "widget_tweaks",
+    "storages",
     "django_ses",
     "chronograph",
 )
