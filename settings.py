@@ -535,6 +535,8 @@ SHARE_VERB                  = u'shared'
 DEAL_POST_VERB              = u'posted a deal'
 WISH_POST_VERB              = u'posted a wish'
 POST_COMMENT_VERB           = u'has commented on post'
+
+REVIEWS_PER_PAGE = 10
 #Trend Settings
 SEARCH_PER_PAGE = 10
 MAX_PAGING_LINKS = 10
