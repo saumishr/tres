@@ -199,6 +199,7 @@ sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-widget-tweaks"))
 DEFAULT_FILE_STORAGE = 's3utils.MediaS3Backend'  #'storages.backends.s3boto.S3BotoStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 's3utils.StaticS3Backend'
+AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
 AWS_S3_URL_PROTOCOL = 'http'
 AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
