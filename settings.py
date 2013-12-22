@@ -468,6 +468,7 @@ DJANGORESIZED_DEFAULT_SIZE = [800, 600]
 #     ("email", "seacucumber.backend.SESBackend"),
 # ]
 
+AWS_QUERYSTRING_AUTH = False
 NOTIFICATION_QUEUE_ALL=True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
@@ -553,7 +554,7 @@ MIN_VOTERS_CHUNK = 10
 MIN_FOLLOWERS_CHUNK = 10 
 MIN_COMMENTERS_CHUNK = 10
 MIN_REVIEWS_STORE_PAGE = 10
-
+MIN_REVIEWS_FOR_USER = 10
 BASE_URL = 'http://www.domain1.com'
 
 #Error Codes
