@@ -88,7 +88,7 @@ USE_SOUTH = True
 # In the format (('Full Name', 'email@example.com'),
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Saurabh Mishra', 'msaurabh.nitw@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -111,7 +111,7 @@ LANGUAGE_CODE = "en"
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = True
+DEBUG = False
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -478,12 +478,12 @@ EMAIL_PORT = 587
 AWS_SES_REGION_NAME = 'us-east-1'
 AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
 DEFAULT_FROM_EMAIL = 'msaurabh.nitw@gmail.com'
-# SERVER_EMAIL = 'msaurabh.nitw@gmail.com'
+SERVER_EMAIL = 'msaurabh.nitw@gmail.com'
 # NOTIFICATION_BACKENDS = [("tresratings@gmail.com", "seacucumber.backend.SESBackend"),]
 EMAIL_BACKEND = 'django_ses.SESBackend' #'seacucumber.backend.SESBackend'
 AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
 AWS_SECRET_ACCESS_KEY = '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'
-
+COMPRESS_ENABLED = False
 
 #other code....
 
