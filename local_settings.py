@@ -1,5 +1,9 @@
+DEBUG = False
+ALLOWED_HOSTS = [
+    '.wishradio-dev.in',
+]
 
-DEBUG = True
+COMPRESS_PARSER = 'compressor.parser.HtmlParser'
 
 DATABASES = {
     "default": {
