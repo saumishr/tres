@@ -2,7 +2,7 @@
 ######################
 # MEZZANINE SETTINGS #
 ######################
-
+ 
 from django.template.defaultfilters import slugify
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
@@ -147,6 +147,7 @@ AUTHENTICATION_BACKENDS = (
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -199,6 +200,7 @@ sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-widget-tweaks"))
 DEFAULT_FILE_STORAGE = 's3utils.MediaS3Backend'  #'storages.backends.s3boto.S3BotoStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 's3utils.StaticS3Backend'
+COMPRESS_STORAGE = STATICFILES_STORAGE
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
 AWS_S3_URL_PROTOCOL = 'http'
@@ -402,7 +404,6 @@ try:
 except ImportError:
     pass
 
-
 ####################
 # DYNAMIC SETTINGS #
 ####################
@@ -483,8 +484,11 @@ SERVER_EMAIL = 'msaurabh.nitw@gmail.com'
 EMAIL_BACKEND = 'django_ses.SESBackend' #'seacucumber.backend.SESBackend'
 AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
 AWS_SECRET_ACCESS_KEY = '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'
-COMPRESS_ENABLED = False
 
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_URL = STATIC_URL
+COMPRESS_ROOT = STATIC_ROOT
 #other code....
 
 #Imagestore Settings
