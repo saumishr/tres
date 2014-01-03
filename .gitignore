@@ -15,4 +15,6 @@
 /django-image-cropper
 /automation
 /django-widget-tweaks
+settings.py
+local_settings.py
 ~

@@ -1,0 +1,3 @@
+$(document).ready(function(){if(window.FileReader){function handleFileSelect(evt){var files=evt.target.files;var f=files[0];var reader=new FileReader();reader.onload=(function(theFile){return function(e){$('#previewimg').html(['<img src="',e.target.result,'" title="',theFile.name,'" width="100"/>'].join(''));};})(f);reader.readAsDataURL(f);}}
+else{}
+$('#id_profile_photo').change(handleFileSelect);});

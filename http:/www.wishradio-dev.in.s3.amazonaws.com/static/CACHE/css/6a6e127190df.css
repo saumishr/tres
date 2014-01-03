@@ -1,0 +1,585 @@
+#accordion-container {
+	font-size: 13px;
+	background: #ffffff;
+}
+
+.accordion-header img{
+	-webkit-box-shadow:none;
+	box-shadow: none;
+}
+
+.accordion-header h2 {
+	display: table-cell;
+}
+
+.whiteLine {
+	margin: auto 20px 2px 20px;
+	border: 0;
+	background-color: #FFFFFF;
+	border-top: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	height: 0px;
+	line-height: 0px;
+	font-size: 0px;
+	display: none;
+}
+.accordion-header {
+	font-family: titillium1, helvetica;
+	white-space: nowrap;
+	display: table;
+	font-size: 15px;
+	line-height: 25px;
+	padding-left: 6px;
+	padding-right: 6px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	cursor: pointer;
+	color: white;
+	background : #029795;
+	background : rgba(2, 151, 149, 1);
+	box-shadow : 0.77px 0.77px 0.77px rgba(198, 190, 190, 0.75);
+	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0.77, OffY=0.77, Color='#C6BEBE') ;
+}
+
+.active-header {
+	background: url(/static/img/arrow_white_up.png) rgba(2, 151, 149, 1);
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+}
+
+.inactive-header {
+	background: url(/static/img/arrow_white_down.png) rgba(2, 151, 149, 1);
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+}
+
+.accordion-content {
+	display: none;
+	padding: 0px 6px 0px 6px;
+	background: #ffffff;
+}
+
+.accordion-header-color-1{
+	background-color:rgba(2, 151, 149, 1);
+}
+.accordion-header-color-2{
+	background-color:rgba(2, 151, 149, 0.93);
+}
+.accordion-header-color-3{
+	background-color:rgba(2, 151, 149, 0.86);
+}
+.accordion-header-color-4{
+	background-color:rgba(2, 151, 149, 0.79);
+}
+.accordion-header-color-5{
+	background-color:rgba(2, 151, 149, 0.73);
+}
+div a.siteURL{
+	color: #029795;
+	color: rgb(2, 151, 149);
+}
+.progress{
+	border-radius: 0;
+	margin: 0;
+	height: 10px;
+	width: 135px;
+	margin-bottom: 15px;
+}
+.progress .bar-success{
+	background-color: #029795;
+	background-image: none;
+}
+.rateStoreNow{
+	border: 0;
+	padding: 6px 10px;
+	box-shadow : 1px 1px 1px rgba(136, 126, 129, 0.75);
+  	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#887E81');
+  	margin-top: -1px;
+}
+.categories img{
+	box-shadow: none;
+}
+.found-helpful{
+	padding: 2px 5px;
+	line-height: normal;
+	margin-left: 3px;
+	margin-right: 4px;
+}
+.found-helpful img{
+	display: none;
+}
+.clear-helpful img{
+	background-image: url("/static/img/cross_button.png");
+	background-size: 10px;
+	background-repeat: no-repeat;
+	margin: 0px;
+	width: 12px;
+	display: inline-block;
+	padding: 12px 0 0 0;
+	height: 0px !important;
+}
+.storeIntro:hover .radioModuleFeedRadio {
+	background-image: url('/static/img/radio_green.png');
+}
+[id*="review"]:hover .radioModuleFeedRadio {
+	background-image: url('/static/img/radio_green.png');
+}
+.ratingSeparator{
+	margin-left: 6px;
+	margin-right: 3px;
+	position: relative;
+	top: 1px;
+}
+.ratingSeparatorLess{
+	margin-right: 3px;
+	margin-left: 3px;
+}
+.socialReview{
+	background-color: rgba(248,248,245,1.00);
+}
+.reviewForm{
+	font-family: titillium1, helvetica;
+	font-size: 12px;
+}
+.reviewForm .textField {
+    border-radius: 0;
+    font-family: titillium2, helvetica;
+    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    padding: 2px;
+    width: 424px;
+}
+.reviewForm input[type="radio"] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -ms-appearance: checkbox;     /* not currently supported */
+    -o-appearance: checkbox;      /* not currently supported */
+    appearance:checkbox;
+    margin: 0;
+}
+.reviewForm textarea.textField{
+	height: 80px;
+    resize: none;
+    transition: height 0.2s ease 0s;
+}
+.reviewForm label{
+	display: inline;
+	font-family: titillium1, helvetica;
+	font-size: 12px;
+}
+.reviewForm .controls {
+	display: inline-block;
+}
+.reviewForm ul {
+	display: inline-block;
+}
+.reviewForm ul li {
+	display: inline;
+	margin-left: 10px;
+}
+input.blockLabel {
+	display: block;
+}
+textarea.blockLabel {
+	display: block;
+}
+select.boughtCategory{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-padding-start: 10px;
+	-moz-padding-start: 10px;
+	background-color: #F9DF1E;
+	background-image: url("/static/img/selectPointer.png");
+	background-position: 94% 8px;
+	background-repeat: no-repeat;
+	border-radius: 0;
+	color: #595757;
+	font-family: fonttitillium1, helvetica;
+	font-size: 12.85px;
+	height: 25px;
+	line-height: normal;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	text-indent: 0.01px;
+	text-overflow: "";
+	vertical-align: top;
+	width: 200px;
+}
+.review_on_object{
+	width:430px;
+	padding:15px;
+}
+.aboutStore p{
+	margin-bottom: 0;
+	line-height: normal;
+}
+#comments div.pagination ul > li {
+	display: inline;
+	padding: 0px;
+	border: none;
+}
+div.vendorLogoImage{
+	height: 150px;
+	line-height: 150px;
+	background-image: url("/static/img/vendor_background.png");
+	background-size: 150px 150px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+div.vendorLogoImage img{
+	width: 140px;
+	max-height: 140px;
+	padding: 5px;
+	display: inline-block;
+}
+.rank {
+	background-color: orange;
+	border-radius: 50% 50%;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+}
+.height26{
+	height: 26px;
+	line-height:26px;
+}
+.height26auto{
+	height: auto;
+	line-height:26px;
+	-webkit-box-shadow: 1.25px 1.25px 1.25px rgba(132,125,125,0.75);
+	box-shadow: 1.25px 1.25px 1.25px rgba(132, 125, 125, 0.75);
+}
+.vendorName {
+	font-size: 2em;
+}
+p.resultDesc {
+	line-height: normal;
+	word-wrap: break-word;
+	display:inline;
+}
+.reviewTitle{
+	color: rgb(99, 98, 91);
+}
+.darken{
+	font-weight: 500;
+}
+.infoSpace{
+	margin-right: 4px;
+}
+.infoStyle {
+	font-style: italic;
+}
+.vendorResult {
+	background-color: #fff;
+	line-height: normal;
+}
+p.webUrl{
+	margin: 0;
+}
+#search-results .vendorResult:hover .radioModuleFeedRadio {
+	background-image: url('/static/img/radio_green.png');
+}
+#accordion-container .accordion-header:first-child{
+	margin-top: 0px;
+}
+.searchFilter label{
+	display: inline-block;
+	margin: 0;
+	margin-left: 10px;
+	line-height: 26px;
+	height: 26px;
+	font-size: 13px;
+}
+.searchFilter input[type="checkbox"]{
+	margin: 0;
+	margin-right:5px;
+	margin-bottom: 3px;
+}
+#searchResultFilter{
+	border: 0;
+	margin-left: 10px;
+	color: white;
+	background : #63625E;
+	background : rgba(99, 98, 94, 1);
+	box-shadow : 1px 1px 1px rgba(153, 142, 126, 0.75);
+	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#998E7E');
+	position: relative;
+	bottom: 1px;
+}
+div.vendorImageLarge{
+	height: 100px;
+	line-height: 100px;
+	background-image: url("/static/img/vendor_background.png");
+	background-size: 100px 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+div.vendorImageLarge img{
+	width: 94px;
+	max-height: 94px;
+	padding: 3px;
+	display: inline-block;
+}
+#category-list li{
+    font-size: 120%;
+    padding-bottom: 15px;
+}
+
+#category-list {
+    padding-bottom: 10px;
+}
+
+#controls {
+    font-size: 90%;
+}
+
+#controls .controls-group {
+    padding-top: 10px;
+}
+
+.image-description {
+    padding: 10px 0 10px 0;
+}
+
+.navigation {
+    text-align: center;
+    padding: 0 0 10px 0;
+    font-size: 110%;
+}
+
+.navigation .next-link {
+    margin-left: 100px;
+}
+
+img.current {
+    border: 1px red solid;
+}
+
+#image-view img.preview {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+#image-view {
+    margin-right: 300px;
+}
+.album-list .album {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.album-name {
+    width: 100%;
+    text-align: center;
+    clear:both;
+}
+
+.album-user {
+    width: 100%;
+    text-align: center;
+    font-size: 80%;
+    color: #CCC;
+}
+
+.album_photos_ex {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.album_photos_ex img{
+    width: 100px;
+    height: 100px;
+    max-height:100px;
+}
+
+.album-head {
+    width:100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.album-head a {
+    text-align: center;
+    font-size: 11px;
+    font-family: titillium1, helvetica;
+}
+.album-head span {
+    text-align: center;
+    font-size: 11px;
+    font-family: titillium1, helvetica;
+}
+
+.user-info {
+    padding: 20px 0;
+}
+
+.image-preview {
+    float: left;
+    width: 130px;
+    padding: 5px;
+    height: 160px;
+}
+
+.image-preview .image-title {
+    font-size: 80%;
+}
+
+.extra-fields {
+    font-size: 80%;
+    margin: 10px 0;
+}
+
+.extra-fields label {
+    color: #666666;
+}
+
+.basic-fields, .extra-fields {
+    display: block;
+    float: left;
+}
+
+.pagination .disabled {
+    display: none;
+}
+
+ul{
+    list-style: None;
+}
+/*	General CSS resets;
+ *		The target itself is not affected, allowing
+ *		the remainder of the document to use an
+ *		alternate box-sizing model;
+ *		Support for box-sizing is wide spread:
+ *		http://caniuse.com/#search=box-sizing
+ */
+ 	.noUi-target {
+ 		display: inline-block;
+ 		width: 200px;
+ 	}
+	.noUi-target * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+	-webkit-touch-callout: none;
+	    -ms-touch-action: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+			cursor: default;
+	}
+
+/*	Main slider bar;
+ *		Use box-shadow instead of border to keep absolute
+ *		positioning unrelated to the styling.
+ */
+	.noUi-base {
+		width: 185px;
+		margin-left:15px;
+		height: 8px;
+		position: relative;
+	}
+
+/*	Handles + active state;
+ */
+	.noUi-handle {
+		top: -5px;
+		left: -5px;
+		width: 0; 
+		height: 0; 
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 15px solid rgba(249, 223, 30, 1);
+		z-index: 1;
+		position: relative;
+		background: transparent;
+		box-shadow : 0px 1px 0px rgba(188, 170, 170, 0.75);
+  		filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0.3, OffY=0.3, Color='#BCAAAA');
+	}
+	.noUi-active {
+/*		background: #F9DF1E;//#E9E9E9;
+		box-shadow: inset 0 0 5px #DDD;*/
+	}
+
+/*	Styling-only classes;
+ *		Structured to prevent double declarations
+ *		for various states of the slider.
+ */
+	.noUi-connect {
+		background: Teal;
+		-webkit-transition: background 0.6s;
+				transition: background 0.6s;
+	}
+	.noUi-background {
+		background: rgba(2, 151, 149, 0.2);
+	}
+
+/*	Functional styles for handle positioning;
+ *		Note that the origins will inherit border radius
+ *		from the parent, even though the default theme
+ *		doesn't use curved borders.
+ */
+	.noUi-origin {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: inherit;
+	}
+	.noUi-origin + .noUi-origin {
+		background: inherit !important;
+	}
+	.noUi-z-index {
+		z-index: 10;
+	}
+
+/*	Adaptations for the vertical slider;
+ *		Some standard styles have been extended to keep
+ *		exceptions for the vertical slider as minimal as possible.
+ */
+	.noUi-vertical {
+		width: 38px;
+		height: 100%;
+	}
+	.noUi-vertical .noUi-origin {
+		bottom: 0;
+		left: 0;
+	}
+	.noUi-vertical .noUi-handle  {
+		top: -23px;
+		left: -3px;
+	}
+
+/*	Slider disabled state;
+ */
+	[disabled] .noUi-base {
+		background: #DDD;
+	}
+	[disabled] .noUi-handle {
+		background: #F7F7F7;
+		cursor: not-allowed;
+	}
+	[disabled] .noUi-connect {
+		background: #EEE;
+	}
+
+/*	Transition states;
+ *		Support for transition is widely available,
+ *		Only IE7, IE8 and IE9 will ignore these rules.
+ *		Since this is merely a progressive enhancement,
+ *		this is no problem at all.
+ *		http://caniuse.com/#search=transition
+ */
+	.noUi-state-tap .noUi-origin {
+		-webkit-transition: left 0.3s, top 0.3s;
+		transition: left 0.3s, top 0.3s;
+	}
+	.noUi-state-blocked .noUi-connect {
+		background: #7f8c8d;
+	}

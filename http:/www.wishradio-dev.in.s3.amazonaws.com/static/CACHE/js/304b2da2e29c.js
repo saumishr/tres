@@ -1,0 +1,3 @@
+$(document).ready(function(){install_review_voting_handler();install_comment_on_object_handler();});var manageFeedOwner=function(){var $this=$(this);if($this.hasClass('manageFeedUp')){$this.removeClass('manageFeedUp');$this.parent().find('.whiteBox').hide();}
+else{$this.addClass('manageFeedUp');$this.parent().find('.whiteBox').show().css({'display':'inline-block','position':'relative','left':'10px'});}}
+var manageFeedOther=function(){if($(this).hasClass('manageFeedUp')){$(this).removeClass('manageFeedUp');$(this).parent().find('.whiteBox').hide();}else{$(this).addClass('manageFeedUp');$(this).parent().find('.whiteBox').show().css({'display':'inline-block','position':'relative','left':'10px'});}}

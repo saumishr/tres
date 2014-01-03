@@ -2,7 +2,7 @@
 ######################
 # MEZZANINE SETTINGS #
 ######################
- 
+import os 
 from django.template.defaultfilters import slugify
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
@@ -125,7 +125,7 @@ SITE_TITLE = "WishRadio"
 USE_I18N = False
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "bcc8efa3-34be-472c-9e7f-229b13e406fc1da67a66-99d5-40f8-8400-ec15329f02667184b876-7a6a-45e0-b89d-f8208accf1d5"
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -178,7 +178,6 @@ DATABASES = {
 # PATHS #
 #########
 
-import os
 import sys
 from django.conf import settings
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
@@ -200,20 +199,27 @@ sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-widget-tweaks"))
 DEFAULT_FILE_STORAGE = 's3utils.MediaS3Backend'  #'storages.backends.s3boto.S3BotoStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 's3utils.StaticS3Backend'
-COMPRESS_STORAGE = STATICFILES_STORAGE
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
 AWS_S3_URL_PROTOCOL = 'http'
-AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'www.wishradio-dev.in'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 AWS_LOCATION = 'static'
 
 S3_URL = 'http://%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_DIRECTORY = '/static/'
 STATIC_URL = S3_URL + STATIC_DIRECTORY
-
+STATIC_ROOT = STATIC_URL
 STORAGE_ROOT = 'static/media'
+
+#Django Compressor settings
+COMPRESS_ENABLED        = True
+COMPRESS_OFFLINE        = True
+COMPRESS_URL            = STATIC_URL
+COMPRESS_ROOT           = STATIC_ROOT
+COMPRESS_PARSER		= 'compressor.parser.HtmlParser'
+COMPRESS_STORAGE 	= STATICFILES_STORAGE
 
 #sys.path.insert(0,os.path.join(PROJECT_ROOT,"django-social-path"))
 # Name of the directory for the project.
@@ -232,7 +238,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = STATIC_URL  #os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+#os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -423,12 +429,12 @@ else:
 
 
 # SOCIAL AUTH SETTINGS
-FACEBOOK_APP_ID 		= '1401801733391485'
-FACEBOOK_API_SECRET 		= '7b361ac05bef9539b7010c9505b89b6c'
-TWITTER_CONSUMER_KEY         	= 'tDEt17kvm6TMCeOqwZ1ow'
-TWITTER_CONSUMER_SECRET      	= 'M9rSGr5h2FtE1xk4X8R5b0ysr2QfCHP5HETlNVITjM'
-GOOGLE_OAUTH2_CLIENT_ID 	= '618532174899-rf35i3t4f6l9drhthgc007scs24a7orl.apps.googleusercontent.com'
-GOOGLE_OAUTH2_CLIENT_SECRET 	= 'hSfKg98h7W4R5Zp3vSBt27O2'
+FACEBOOK_APP_ID 		= os.environ['FACEBOOK_APP_ID']
+FACEBOOK_API_SECRET 		= os.environ['FACEBOOK_API_SECRET']
+TWITTER_CONSUMER_KEY         	= os.environ['TWITTER_CONSUMER_KEY']
+TWITTER_CONSUMER_SECRET      	= os.environ['TWITTER_CONSUMER_SECRET']
+GOOGLE_OAUTH2_CLIENT_ID 	= os.environ['GOOGLE_OAUTH2_CLIENT_ID']
+GOOGLE_OAUTH2_CLIENT_SECRET 	= os.environ['GOOGLE_OAUTH2_CLIENT_SECRET']
 GOOGLE_OAUTH_EXTRA_SCOPE =  [ 
                                  'https://www.google.com/m8/feeds', 
                             ]
@@ -472,23 +478,16 @@ DJANGORESIZED_DEFAULT_SIZE = [800, 600]
 AWS_QUERYSTRING_AUTH = False
 NOTIFICATION_QUEUE_ALL=True
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
-EMAIL_HOST_USER = 'AKIAI6IIA6QQEEVDFKQQ'    #SES username
-EMAIL_HOST_PASSWORD = 'AnykCYSamXcYO16WNs0HvjzHpM+lSH3v/05C68n/FGoQ'  #SES password
-EMAIL_PORT = 587
-AWS_SES_REGION_NAME = 'us-east-1'
-AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
-DEFAULT_FROM_EMAIL = 'msaurabh.nitw@gmail.com'
-SERVER_EMAIL = 'msaurabh.nitw@gmail.com'
-# NOTIFICATION_BACKENDS = [("tresratings@gmail.com", "seacucumber.backend.SESBackend"),]
-EMAIL_BACKEND = 'django_ses.SESBackend' #'seacucumber.backend.SESBackend'
-AWS_ACCESS_KEY_ID = 'AKIAJIJ53XPMKAOV7TDQ'
-AWS_SECRET_ACCESS_KEY = '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'
+EMAIL_HOST 		= os.environ['EMAIL_HOST']
+EMAIL_HOST_USER 	= os.environ['EMAIL_HOST_USER']    #SES username
+EMAIL_HOST_PASSWORD 	= os.environ['EMAIL_HOST_PASSWORD']  #SES password
+EMAIL_PORT 		= os.environ['EMAIL_PORT']
+AWS_SES_REGION_NAME 	= os.environ['AWS_SES_REGION_NAME']
+AWS_SES_REGION_ENDPOINT = os.environ['AWS_SES_REGION_ENDPOINT']
+DEFAULT_FROM_EMAIL 	= 'msaurabh.nitw@gmail.com'
+SERVER_EMAIL 		= 'msaurabh.nitw@gmail.com'
+EMAIL_BACKEND 		= 'django_ses.SESBackend' 
 
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
-COMPRESS_URL = STATIC_URL
-COMPRESS_ROOT = STATIC_ROOT
 #other code....
 
 #Imagestore Settings
@@ -560,7 +559,7 @@ MIN_FOLLOWERS_CHUNK = 10
 MIN_COMMENTERS_CHUNK = 10
 MIN_REVIEWS_STORE_PAGE = 10
 MIN_REVIEWS_FOR_USER = 10
-BASE_URL = 'http://www.domain1.com'
+BASE_URL = 'http://www.wishradio-dev.in'
 
 #Error Codes
 DEAL_IMAGE_REQUIRED                 = 100
