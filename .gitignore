@@ -17,4 +17,5 @@
 /django-widget-tweaks
 settings.py
 local_settings.py
+CACHE
 ~
