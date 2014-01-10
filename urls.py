@@ -9,7 +9,7 @@ from hitcount.views import update_hit_count_ajax
 from mezzanine.generic.models import ThreadedComment, Review, RequiredReviewRating
 from userProfile.models import Broadcast, BroadcastDeal, BroadcastWish, GenericWish
 from userProfile.views import edit_blog_image, broadcast, userwish, view_wish, get_wishlist, get_deallist, get_filtered_deallist, get_related_stores, shareObject, deleteObject, shareWish, shareDeal, shareStore, close_login_popup, get_profile_image , view_deal, view_post 
-from userProfile.views import getShopTalk, getUserReviews, followObject, unfollowObject, followWish, unfollowWish, getTrendingStores, getTrendingDeals, getTrendingReviews, render_wish, get_reldata, get_reviews_by_user
+from userProfile.views import facebook_view, getShopTalk, getUserReviews, followObject, unfollowObject, followWish, unfollowWish, getTrendingStores, getTrendingDeals, getTrendingReviews, render_wish, get_reldata, get_reviews_by_user
 from mezzanine.blog.views import blog_subcategories, get_vendors, get_vendors_all, get_vendors_allsub
 
 comment_dict = {
@@ -132,7 +132,9 @@ urlpatterns = patterns("",
     url(r'^blog/image/edit/(?P<blogpost_id>[\d]+)/$', edit_blog_image, name='edit_blog_image'),  
     url(r'^admin/django-ses/', include('django_ses.urls')),
     url(r'^user/reviews/(?P<user_id>\d+)/(?P<sIndex>\d+)/(?P<lIndex>\d+)/$', getUserReviews , name='getUserReviews'),
-    url(r'^shop-talk/$', getShopTalk , name='getShopTalk'),  
+    url(r'^shop-talk/$', getShopTalk , name='getShopTalk'), 
+    url(r'^facebook/$', facebook_view , name='facebook_view'),
+    
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
