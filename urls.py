@@ -10,7 +10,7 @@ from mezzanine.generic.models import ThreadedComment, Review, RequiredReviewRati
 from userProfile.models import Broadcast, BroadcastDeal, BroadcastWish, GenericWish
 from userProfile.views import edit_blog_image, broadcast, userwish, view_wish, get_wishlist, get_deallist, get_filtered_deallist, get_related_stores, shareObject, deleteObject, shareWish, shareDeal, shareStore, close_login_popup, get_profile_image , view_deal, view_post 
 from userProfile.views import autocomplete, contact_us, suggest_store, facebook_view, getShopTalk, getUserReviews, followObject, unfollowObject, followWish, unfollowWish, getTrendingStores, getTrendingDeals, getTrendingReviews, render_wish, get_reldata, get_reviews_by_user
-from userProfile.views import privacy_policy, terms_and_conditions, about_us, autocomplete_stores
+from userProfile.views import privacy_policy, terms_and_conditions, about_us, autocomplete_stores, getTrendingStores_v2
 from mezzanine.blog.views import blog_subcategories, get_vendors, get_vendors_all, get_vendors_allsub
 
 comment_dict = {
@@ -116,6 +116,7 @@ urlpatterns = patterns("",
     url(r'^object/(?P<content_type_id>\d+)/(?P<object_id>\d+)/share/$', shareObject, name='shareObject'),
     url(r'^object/(?P<content_type_id>\d+)/(?P<object_id>\d+)/delete/$', deleteObject, name='deleteObject'),
     url(r'^(?P<parent_category>[%&-_ \w\d]+)/(?P<sub_category>[%&-_ \w\d]+)/trendingstores/(?P<sIndex>\d+)/(?P<lIndex>\d+)/$', getTrendingStores , name='getTrendingStores'),
+    url(r'^(?P<parent_category>[%&-_ \w\d]+)/(?P<sub_category>[%&-_ \w\d]+)/trendingstores/v2/(?P<sIndex>\d+)/(?P<lIndex>\d+)/$', getTrendingStores_v2 , name='getTrendingStores_v2'),
     url(r'^(?P<parent_category>[%&-_ \w\d]+)/(?P<sub_category>[%&-_ \w\d]+)/trendingdeals/(?P<sIndex>\d+)/(?P<lIndex>\d+)/$', getTrendingDeals , name='getTrendingDeals'),
     url(r'^(?P<parent_category>[%&-_ \w\d]+)/(?P<sub_category>[%&-_ \w\d]+)/trendingreviews/(?P<sIndex>\d+)/(?P<lIndex>\d+)/$', getTrendingReviews , name='getTrendingReviews'),
     url(r'^wish/(?P<wish_id>\d+)/follow/$', followWish, name='followWish'),
